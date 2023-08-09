@@ -1,9 +1,10 @@
 const ratingEls = document.querySelectorAll(".rating");
 const btnEl = document.getElementById("btn");
-
 const containerEl = document.getElementById("container");
+const suggestionEl = document.getElementById("suggestion"); // Suggestion
 
 let selectedRating = "";
+let userSuggestion = ""; // Suggestion
 
 ratingEls.forEach((ratingEl) => {
     ratingEl.addEventListener("click", (event) => {
@@ -15,6 +16,11 @@ ratingEls.forEach((ratingEl) => {
     });
 });
 
+// Event listener for suggestion textbox
+suggestionEl.addEventListener("input", (event) => {
+    userSuggestion = event.target.value;
+});
+
 btnEl.addEventListener("click", () => {
     if (selectedRating !== "") {
         containerEl.innerHTML = `
@@ -23,6 +29,8 @@ btnEl.addEventListener("click", () => {
         <br>
         <strong>Feedback: ${selectedRating}</strong>
         <p>We'll use your feedback to improve our customer support.</p>
+        <strong>Your Suggestion:</strong>
+        <p>${userSuggestion}</p>
         `;
     }
 });
