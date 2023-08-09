@@ -21,19 +21,23 @@ body {
 }
 
 .heading {
-    margin: 5px;
+    margin: 10px 0;
     font-size: 30px;
 }
 
 .ratings-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     padding: 20px 0;
 }
 
 .rating {
     cursor: pointer;
     padding: 10px;
-    margin: 10px 5px;
+    margin: 10px;
+    transition: all 300ms ease;
 }
 
 .rating:hover,
@@ -42,7 +46,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     color: aliceblue;
-    transition: all 300ms ease;
 }
 
 .btn {
@@ -53,17 +56,31 @@ body {
     border-radius: 4px;
     padding: 12px 30px;
     cursor: pointer;
+    transition: all 300ms ease;
 }
 
 .btn:hover {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    transition: all 300ms ease;
-}
-
-.btn:active {
-    transform: scale(0.96);
+    transform: scale(1.02);
 }
 
 .rating img {
     width: 40px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.suggestion {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid darkgreen;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.suggestion:focus {
+    outline: none;
+    border-color: darkcyan;
+    box-shadow: 0 0 5px darkcyan;
 }
